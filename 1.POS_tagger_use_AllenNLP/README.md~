@@ -1,0 +1,4 @@
+```
+python POS_tagger_AllenNLP.py
+```
+will 'train' 'evaluate' 'predict'
