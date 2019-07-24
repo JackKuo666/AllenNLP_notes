@@ -1,0 +1,32 @@
+/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/data/token_indexers/token_characters_indexer.py:55: UserWarning: You are using the default value (0) of `min_padding_length`, which can cause some subtle bugs (more info see https://github.com/allenai/allennlp/issues/1954). Strongly recommend to set a value, usually the maximum size of the convolutional layer size when using CnnEncoder.
+  UserWarning)
+0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/home/kuo/anaconda2/envs/allennlp/bin/allennlp", line 11, in <module>
+    sys.exit(run())
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/run.py", line 18, in run
+    main(prog="allennlp")
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/commands/__init__.py", line 102, in main
+    args.func(args)
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/commands/train.py", line 116, in train_model_from_args
+    args.cache_prefix)
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/commands/train.py", line 160, in train_model_from_file
+    cache_directory, cache_prefix)
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/commands/train.py", line 218, in train_model
+    cache_prefix)
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/training/trainer.py", line 772, in from_params
+    all_datasets = training_util.datasets_from_params(params, cache_directory, cache_prefix)
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/training/util.py", line 178, in datasets_from_params
+    train_data = dataset_reader.read(train_data_path)
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/data/dataset_readers/dataset_reader.py", line 134, in read
+    instances = [instance for instance in Tqdm.tqdm(instances)]
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/data/dataset_readers/dataset_reader.py", line 134, in <listcomp>
+    instances = [instance for instance in Tqdm.tqdm(instances)]
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/tqdm/_tqdm.py", line 1017, in __iter__
+    for obj in iterable:
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/data/dataset_readers/conll2003.py", line 102, in _read
+    file_path = cached_path(file_path)
+  File "/home/kuo/anaconda2/envs/allennlp/lib/python3.6/site-packages/allennlp/common/file_utils.py", line 104, in cached_path
+    raise FileNotFoundError("file {} not found".format(url_or_filename))
+FileNotFoundError: file /path/to/eng.train not found
+

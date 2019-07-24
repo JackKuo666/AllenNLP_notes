@@ -11,5 +11,3 @@ allennlp evaluate ./tmp/simple_tagger/model.tar.gz ./data/sentences.small.dev
 ```
 allennlp evaluate ./tmp/simple_tagger/model.tar.gz ./input.txt
 ```
-# 2.crf
-coming soon

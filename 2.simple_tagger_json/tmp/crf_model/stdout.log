@@ -1,0 +1,32 @@
+2019-07-24 21:21:39,770 - INFO - allennlp.common.params - random_seed = 13370
+2019-07-24 21:21:39,771 - INFO - allennlp.common.params - numpy_seed = 1337
+2019-07-24 21:21:39,771 - INFO - allennlp.common.params - pytorch_seed = 133
+2019-07-24 21:21:40,069 - INFO - allennlp.common.checks - Pytorch version: 1.1.0
+2019-07-24 21:21:40,073 - INFO - allennlp.common.params - evaluate_on_test = True
+2019-07-24 21:21:40,073 - INFO - allennlp.common.params - validation_dataset_reader = None
+2019-07-24 21:21:40,074 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.data.dataset_readers.dataset_reader.DatasetReader'> from params {'tag_label': 'ner', 'token_indexers': {'token_characters': {'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}, 'type': 'conll2003'} and extras set()
+2019-07-24 21:21:40,075 - INFO - allennlp.common.params - dataset_reader.type = conll2003
+2019-07-24 21:21:40,075 - INFO - allennlp.common.from_params - instantiating class <class 'allennlp.data.dataset_readers.conll2003.Conll2003DatasetReader'> from params {'tag_label': 'ner', 'token_indexers': {'token_characters': {'type': 'characters'}, 'tokens': {'lowercase_tokens': True, 'type': 'single_id'}}} and extras set()
+2019-07-24 21:21:40,077 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'type': 'characters'} and extras set()
+2019-07-24 21:21:40,077 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.type = characters
+2019-07-24 21:21:40,078 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_characters_indexer.TokenCharactersIndexer from params {} and extras set()
+2019-07-24 21:21:40,079 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.namespace = token_characters
+2019-07-24 21:21:40,079 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.start_tokens = None
+2019-07-24 21:21:40,079 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.end_tokens = None
+2019-07-24 21:21:40,079 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.min_padding_length = 0
+2019-07-24 21:21:40,080 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.token_min_padding_length = 0
+2019-07-24 21:21:40,087 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.token_indexer.TokenIndexer from params {'lowercase_tokens': True, 'type': 'single_id'} and extras set()
+2019-07-24 21:21:40,088 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.type = single_id
+2019-07-24 21:21:40,088 - INFO - allennlp.common.from_params - instantiating class allennlp.data.token_indexers.single_id_token_indexer.SingleIdTokenIndexer from params {'lowercase_tokens': True} and extras set()
+2019-07-24 21:21:40,089 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.namespace = tokens
+2019-07-24 21:21:40,090 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.lowercase_tokens = True
+2019-07-24 21:21:40,090 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.start_tokens = None
+2019-07-24 21:21:40,090 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.end_tokens = None
+2019-07-24 21:21:40,090 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.token_min_padding_length = 0
+2019-07-24 21:21:40,091 - INFO - allennlp.common.params - dataset_reader.tag_label = ner
+2019-07-24 21:21:40,091 - INFO - allennlp.common.params - dataset_reader.feature_labels = ()
+2019-07-24 21:21:40,091 - INFO - allennlp.common.params - dataset_reader.lazy = False
+2019-07-24 21:21:40,092 - INFO - allennlp.common.params - dataset_reader.coding_scheme = IOB1
+2019-07-24 21:21:40,092 - INFO - allennlp.common.params - dataset_reader.label_namespace = labels
+2019-07-24 21:21:40,092 - INFO - allennlp.common.params - train_data_path = /path/to/eng.train
+2019-07-24 21:21:40,092 - INFO - allennlp.training.util - Reading training data from /path/to/eng.train
