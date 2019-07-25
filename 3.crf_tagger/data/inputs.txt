@@ -1,2 +1,2 @@
-{"sentence": "I am reading a tutorial."}
-{"sentence": "Natural language processing is easy."}
+{"sentence": "I am talking with Robert."}
+{"sentence": "Yayaayayay kings of leon tonight!!!"}

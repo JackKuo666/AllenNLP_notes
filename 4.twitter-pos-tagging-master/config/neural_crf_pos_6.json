@@ -1,7 +1,7 @@
 {
   "dataset_reader": {
     "type": "conll2003",
-    "tag_label": "ner",
+    "tag_label": "pos",
     "token_indexers": {
       "tokens": {
         "type": "single_id",
@@ -12,19 +12,18 @@
       }
     }
   },
-  "train_data_path": "data/twitter_train.ner",
-  "validation_data_path": "data/twitter_dev.ner",
-  "test_data_path": "data/twitter_dev.ner",
+  "train_data_path": "./data/twitter_train.pos",
+  "validation_data_path": "./data/twitter_dev.pos",
+  "test_data_path": "./data/twitter_test.pos",
   "evaluate_on_test": true,
   "model": {
-    "type": "crf_tagger",
+    "label_encoding": "BMES",
+    "type": "neural_crf",
     "text_field_embedder": {
       "token_embedders": {
         "tokens": {
             "type": "embedding",
-            "embedding_dim": 50,
-            "pretrained_file": "pretrained_file/glove.6B.50d.txt.gz",
-            "trainable": true
+            "embedding_dim": 100
         },
         "token_characters": {
             "type": "character_encoding",
@@ -32,23 +31,18 @@
             "embedding_dim": 25
             },
             "encoder": {
-            "type": "gru",
+            "type": "rnn",
             "input_size": 25,
             "hidden_size": 80,
             "num_layers": 2,
-            "dropout": 0.25,
-            "bidirectional": true
+            "dropout": 0.75
             }
         }
       }
     },
     "encoder": {
-      "type": "gru",
-      "input_size": 210,
-      "hidden_size": 300,
-      "num_layers": 2,
-      "dropout": 0.5,
-      "bidirectional": true
+      "type": "pass_through",
+      "input_dim": 180
     },
     "regularizer": [
       [
