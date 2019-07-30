@@ -95,7 +95,12 @@ class PosDatasetReader(DatasetReader):
 
 
     def text_to_instance(self, tokens: List[Token], tags: List[str] = None) -> Instance:
+
         sentence_field = TextField(tokens, self.token_indexers)
+        sentence_field.index(vocab=Vocabulary())
+        print(sentence_field.as_tensor(sentence_field.get_padding_lengths()),"\n")
+        print(sentence_field)
+
         fields = {"sentence": sentence_field}
 
         if tags:
@@ -185,13 +190,35 @@ class LstmTagger(Model):
         if labels is not None:
             self.accuracy(tag_logits, labels, mask)
             output["loss"] = sequence_cross_entropy_with_logits(tag_logits, labels, mask)
-        # 和以前一样，标签是可选的，因为我们可能希望运行此模型来对未标记的数据进行预测。
+
+
+
+            logits_flat = tag_logits.view(-1, tag_logits.size(-1))
+            # shape : (batch * sequence_length, num_classes)
+            log_probs_flat = torch.nn.functional.log_softmax(logits_flat, dim=-1)
+            # shape : (batch * max_len, 1)
+            targets_flat = labels.view(-1, 1).long()
+
+            negative_log_likelihood_flat = - torch.gather(log_probs_flat, dim=1, index=targets_flat)
+            # shape : (batch, sequence_length)
+            negative_log_likelihood = negative_log_likelihood_flat.view(*labels.size())
+            # shape : (batch, sequence_length)
+            negative_log_likelihood = negative_log_likelihood * mask.float()
+
+            from allennlp.training.metrics import PearsonCorrelation
+            self.m = PearsonCorrelation()
+
+            self.m(predictions=negative_log_likelihood,gold_labels=labels.float())
+
+
+    # 和以前一样，标签是可选的，因为我们可能希望运行此模型来对未标记的数据进行预测。
         # 如果我们有标签，那么我们使用它们来更新我们的准确度指标（accuracy metric）并计算输出中的“损失(loss)”。
 
         return output
 
-        def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-            return {"accuracy": self.accuracy.get_metric(reset)}
+    def get_metrics(self, reset: bool = False) -> Dict[str, float]:
+        return {"accuracy": self.accuracy.get_metric(reset),"pearson_correlation": self.m.get_metric(reset)}
+        # return {"accuracy": self.accuracy.get_metric(reset)}
         # 我们提供了一个准确度指标(accuracy metric)，每个正向传递都会更新。
         # 这意味着我们需要覆盖(override)从中提取数据的get_metrics方法。
         # 这意味着，CategoricalAccuracy指标存储预测数量和正确预测的数量，在每次call to forward 期间更新这些计数。
