@@ -40,3 +40,6 @@ import allennlp
     - [ ] [3,4,5,...]
 - [ ] [简书中的一篇教程](https://www.jianshu.com/p/17abfefc1b5b)
 
+
+# 4.使用allennlp进行中文分类
+https://zhuanlan.zhihu.com/p/72854270
