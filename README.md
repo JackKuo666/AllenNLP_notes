@@ -1,4 +1,4 @@
-`说明`：这个笔记是依赖allennlp 0.9版本，最近重新看的时候AllenNLP已经更新到2.6了，所以根据官方教程跑了最近版本的：[learn_allennlp_get_start](https://github.com/JackKuo666/learn_allennlp_get_start),基本把Allennlp的两种训练方式（python脚本、Allennlp train）以及分别使用lstm和bert来训练分类的例子，以及如何自己预测介绍完了。
+`说明`：这个笔记是依赖allennlp 0.9版本，最近重新看的时候AllenNLP已经更新到2.6了，所以根据官方教程跑了最近版本的，可以参见我的新的project：[learn_allennlp_get_start](https://github.com/JackKuo666/learn_allennlp_get_start),基本把Allennlp的两种训练方式（python脚本、Allennlp train）以及分别使用lstm和bert来训练分类的例子，以及如何自己预测介绍完了。
 
 # AllenNLP_notes
 这是我学习AllenNLP的笔记
